@@ -31,4 +31,18 @@ export class VehicleService {
     
   }
 
+  /**
+   * name
+   */
+  public saveVehicle(vehicle: Vehicle) {
+
+    return this.httpClient
+    .post('https://localhost:44327/Car', vehicle)
+    .pipe(
+      map(res =>res),
+      catchError(error=>throwError(error)));
+
+    
+  }
+
 }

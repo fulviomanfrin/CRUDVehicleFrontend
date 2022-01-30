@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router} from '@angular/router'
-import { AppRoutingModule } from '../app-routing.module';
+import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-sidebar',
@@ -9,14 +10,23 @@ import { AppRoutingModule } from '../app-routing.module';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  // navigateToCrudForm(): void {
-  //   this.router.navigate('/crud')
-  // }
+  
+  navigateToCrudForm(): void {
+    this.navigate('crud');
+  }
 
+  navigateDashboard(): void {
+    this.navigate('dashboard');
+  }
+
+  navigate(url: string) {
+    this.router.navigateByUrl(url)
+  }
 
 }
+

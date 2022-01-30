@@ -7,13 +7,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: "",
+    path: "dashboard",
     component: DashboardComponent
   },
   {
-    path: "/crud",
+    path: "crud",
     component: CrudFormComponent
-  }
+  },
 ];
 
 @NgModule({

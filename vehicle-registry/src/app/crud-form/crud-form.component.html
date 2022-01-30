@@ -1,1 +1,50 @@
-<p>crud-form works!</p>
+<div [formGroup]="form">
+    <div class="alert alert-danger" role="alert"
+        *ngIf="form.invalid && showError">
+        Todos os campos são obrigatórios!
+    </div>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" 
+            placeholder="Model" 
+            aria-describedby="basic-addon1"
+            formControlName="model"
+            [(ngModel)]="vehicle.model">
+
+    </div>
+    <div class="input-group mb-3" style="width: 200px;">
+        <input type="number" maxlength="4"  class="form-control" 
+            placeholder="Year" 
+            aria-describedby="basic-addon1"
+            formControlName="year"
+            [(ngModel)]="vehicle.year">
+    </div>
+    <div class="input-group mb-3" style="width: 200px;">
+        <input type="number" maxlength="2"  class="form-control" 
+            placeholder="Make" 
+            aria-describedby="basic-addon1"
+            formControlName="Make"
+            [(ngModel)]="vehicle.makeId">
+    </div>
+    <div class="input-group mb-3" style="width: 200px;">
+        <input type="number" maxlength="2"  class="form-control" 
+            placeholder="Doors" 
+            aria-describedby="basic-addon1"
+            formControlName="Doors"
+            [(ngModel)]="vehicle.doorQty">
+    </div>
+    <div class="input-group mb-3" style="width: 200px;">
+        <input type="number" maxlength="2"  class="form-control" 
+            placeholder="Transmission" 
+            aria-describedby="basic-addon1"
+            formControlName="Transmission"
+            [(ngModel)]="vehicle.transmissionType">
+    </div>
+    <div class="input-group mb-3" style="width: 200px;">
+        <input type="number" maxlength="2"  class="form-control" 
+            placeholder="Fuel" 
+            aria-describedby="basic-addon1"
+            formControlName="Fuel"
+            [(ngModel)]="vehicle.fuelType">
+    </div>
+    <button (click)="save()">Save</button>
+</div>
