@@ -2,6 +2,7 @@ import { HttpClientModule, HttpHeaders, HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core';
 import { catchError, map, Observable, throwError} from 'rxjs'
 import { Vehicle } from '../models/vehicle';
+import { VehicleListComponent } from '../vehicle-list/vehicle-list.component';
 
 @Injectable({
   providedIn: 'root'
@@ -50,6 +51,7 @@ export class VehicleService {
     .pipe(
       map(res =>res),
       catchError(error=>throwError(error)));
+      
 
     
   }
@@ -64,6 +66,8 @@ export class VehicleService {
 
     
   }
+
+  
 
   
 
