@@ -24,6 +24,10 @@ export class SidebarComponent implements OnInit {
     this.navigate('dashboard');
   }
 
+  navigateToList(): void {
+    this.navigate('list');
+  }
+
   navigate(url: string) {
     this.router.navigateByUrl(url)
   }

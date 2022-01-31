@@ -1,7 +1,7 @@
 <div [formGroup]="form">
     <div class="alert alert-danger" role="alert"
-        *ngIf="form.invalid && showError">
-        Todos os campos são obrigatórios!
+        *ngIf="(form.invalid || error != '') && showError">
+        {{error}}
     </div>
     <div class="input-group mb-3">
         <input type="text" class="form-control" 
@@ -22,29 +22,30 @@
         <input type="number" maxlength="2"  class="form-control" 
             placeholder="Make" 
             aria-describedby="basic-addon1"
-            formControlName="Make"
+            formControlName="makeId"
             [(ngModel)]="vehicle.makeId">
     </div>
     <div class="input-group mb-3" style="width: 200px;">
         <input type="number" maxlength="2"  class="form-control" 
             placeholder="Doors" 
             aria-describedby="basic-addon1"
-            formControlName="Doors"
+            formControlName="doorQty"
             [(ngModel)]="vehicle.doorQty">
     </div>
     <div class="input-group mb-3" style="width: 200px;">
         <input type="number" maxlength="2"  class="form-control" 
             placeholder="Transmission" 
             aria-describedby="basic-addon1"
-            formControlName="Transmission"
+            formControlName="transmissionType"
             [(ngModel)]="vehicle.transmissionType">
     </div>
     <div class="input-group mb-3" style="width: 200px;">
         <input type="number" maxlength="2"  class="form-control" 
             placeholder="Fuel" 
             aria-describedby="basic-addon1"
-            formControlName="Fuel"
+            formControlName="fuelType"
             [(ngModel)]="vehicle.fuelType">
     </div>
     <button (click)="save()">Save</button>
+    
 </div>

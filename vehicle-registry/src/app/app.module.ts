@@ -10,6 +10,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
 import { CrudFormComponent } from './crud-form/crud-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { VehicleListComponent } from './vehicle-list/vehicle-list.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SidebarComponent,
     VehiclesComponent,
     CrudFormComponent,
+    VehicleListComponent,
     
   ],
   imports: [

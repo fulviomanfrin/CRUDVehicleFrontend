@@ -1,0 +1,30 @@
+<div class="col">
+    <table class="table table-dark table-striped" >
+        <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Model</th>
+              <th scope="col">Make Id</th>
+              <th scope="col">Doors</th>
+              <th scope="col">Transmission</th>
+              <th scope="col">Year</th>
+              <th scope="col">Fuel</th>
+            </tr>
+          </thead>
+          <tbody >
+            <tr *ngFor="let vehicle of vehicles">
+              <th scope="row">{{ vehicle.id }}</th>
+              <td>{{ vehicle.model }}</td>
+              <td>{{ vehicle.makeId }}</td>
+              <td>{{ vehicle.doorQty }}</td>
+              <td>{{ vehicle.transmissionType }}</td>
+              <td>{{ vehicle.year }}</td>
+              <td>{{ vehicle.fuelType }}</td>
+              <button (click)="navigateWithId(vehicle.id)">Update</button>
+            </tr>
+            
+          </tbody>
+      </table>
+      <button (click)="navigate()">New</button>
+  </div>
+

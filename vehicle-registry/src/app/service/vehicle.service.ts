@@ -31,6 +31,15 @@ export class VehicleService {
     
   }
 
+  public getVehiclesById(id: number): Observable<any>{
+    return this.httpClient
+    .get(`https://localhost:44327/Car/${id}`)
+    .pipe(
+      map(res =>res),
+      catchError(error=>throwError(error)));
+    
+  }
+
   /**
    * name
    */

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CrudFormComponent } from './crud-form/crud-form.component';
 import { RouterModule, Routes } from '@angular/router';
+import { VehicleListComponent } from './vehicle-list/vehicle-list.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: "crud",
     component: CrudFormComponent
+  },
+  {
+    path: "list",
+    component: VehicleListComponent
   },
 ];
 

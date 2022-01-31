@@ -6,22 +6,16 @@
                     <span class="fs-5 d-none d-sm-inline">Menu</span>
                 </a>
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                    <li class="nav-item">
-                        <a class="nav-link align-middle px-0">
-                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
-                        </a>
-                    </li>
                     <li (click)="navigateDashboard()">
                         <a data-bs-toggle="collapse" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
                         <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
-                            
-                        </ul>
+                   </ul>
                     </li>
-                    <li (click)="navigateToCrudForm()">
+                    <li (click)="navigateToList()">
                         <a class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-table"></i> <span  class="ms-1 d-none d-sm-inline">Vehicles</span></a>
-                    </li>
+                   </li>
                     
                     
                 </ul>
