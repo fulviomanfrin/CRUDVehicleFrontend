@@ -10,9 +10,9 @@
         <p class="h3">List</p>
       </div>
       <!-- cards -->
-      <div class="col">
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-            <div class="col">
+      <div class="col" >
+        <div class="row row-cols-1 row-cols-md-2 g-4" >
+            <div class="col" >
               <div class="card">
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
@@ -88,36 +88,33 @@
       <div class="col">
         <p class="h3">Vehicles by Transmission</p>
       </div>
-      <div class="col">
-        <script type="text/javascript">
-            // Initialize the echarts instance based on the prepared dom
-            var myChart = echarts.init(document.getElementById('main'));
-      
-            // Specify the configuration items and data for the chart
-            var option = {
-              title: {
-                text: 'ECharts Getting Started Example'
-              },
-              tooltip: {},
-              legend: {
-                data: ['sales']
-              },
-              xAxis: {
-                data: ['Shirts', 'Cardigans', 'Chiffons', 'Pants', 'Heels', 'Socks']
-              },
-              yAxis: {},
-              series: [
-                {
-                  name: 'sales',
-                  type: 'bar',
-                  data: [5, 20, 36, 10, 10, 20]
-                }
-              ]
-            };
-      
-            // Display the chart using the configuration items and data just specified.
-            myChart.setOption(option);
-          </script>
+        <!-- Card Grid -->
+
+      <div class="col" >
+        <div class="row">
+          <div class="col-sm-6" >
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">
+                  With supporting text below as a natural lead-in to additional content.
+                </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">
+                  With supporting text below as a natural lead-in to additional content.
+                </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="col">
  <ul class="vehicle">

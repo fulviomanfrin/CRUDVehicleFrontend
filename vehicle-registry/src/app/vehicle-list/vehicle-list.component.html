@@ -9,6 +9,9 @@
               <th scope="col">Transmission</th>
               <th scope="col">Year</th>
               <th scope="col">Fuel</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              
             </tr>
           </thead>
           <tbody >
@@ -20,7 +23,8 @@
               <td>{{ vehicle.transmissionType }}</td>
               <td>{{ vehicle.year }}</td>
               <td>{{ vehicle.fuelType }}</td>
-              <button (click)="navigateWithId(vehicle.id)">Update</button>
+              <td><button type="button" class="btn btn-primary" (click)="navigateWithId(vehicle.id)">Update</button></td>
+              <td><button type="button" class="btn btn-danger" (click)="deleteId(vehicle.id)">Delete</button></td>
             </tr>
             
           </tbody>

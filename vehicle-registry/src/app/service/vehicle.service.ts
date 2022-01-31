@@ -54,4 +54,17 @@ export class VehicleService {
     
   }
 
+  public deleteVehicle(id?: number | null | undefined) {
+
+    return this.httpClient
+    .delete(`https://localhost:44327/Car/${id}`)
+    .pipe(
+      map(res =>res),
+      catchError(error=>throwError(error)));
+
+    
+  }
+
+  
+
 }

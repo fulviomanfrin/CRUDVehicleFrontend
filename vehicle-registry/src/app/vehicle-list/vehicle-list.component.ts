@@ -12,6 +12,7 @@ import { VehicleService} from '../service/vehicle.service'
 export class VehicleListComponent implements OnInit {
 
   vehicles: Vehicle[] = [];
+  vehicle = new Vehicle;
 
   constructor(private _service: VehicleService, private router: Router) { }
 
@@ -32,6 +33,14 @@ export class VehicleListComponent implements OnInit {
     this.router.navigateByUrl(`crud?id=${id}`);
   }
 
-  
+  deleteId(id?: number | null) {
+    this._service.deleteVehicle(id)
+      .subscribe((response) => {
+          console.log(response)
+      })
+  }
+
+  //getTransmissionText(ETransmission)
+
 
 }
