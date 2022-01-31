@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Params, Router, ActivatedRoute } from '@angular/router';
+import { Params, Router, ActivatedRoute, Routes } from '@angular/router';
 import { Vehicle } from '../models/vehicle';
 import { VehicleService } from '../service/vehicle.service';
+import { VehicleListComponent } from '../vehicle-list/vehicle-list.component';
 
 @Component({
   selector: 'app-crud-form',
@@ -12,11 +13,12 @@ import { VehicleService } from '../service/vehicle.service';
 export class CrudFormComponent implements OnInit {
   form: FormGroup;
   vehicle: Vehicle = new Vehicle;
+  
 
   error: string = ''
   showError = false;
 
-  constructor(private _formBuilder: FormBuilder, private _service: VehicleService, private router: ActivatedRoute) {
+  constructor(private _formBuilder: FormBuilder, private _service: VehicleService, private router: ActivatedRoute, private route: Router) {
     this.form = this._formBuilder.group({
       model: ['', Validators.required],
       year: [null, Validators.required],
@@ -50,14 +52,23 @@ export class CrudFormComponent implements OnInit {
     .subscribe(
         (response) => {
             console.log(response)
+            this.navBack()
+            
         },
-        (error) => {
-          this.error = error.error
-          this.showError = true;
-            console.log(error)
-        }
-)
+            (error) => {
+              this.error = error.error
+              this.showError = true;
+                console.log(error)
+        },
+              
+               
+              )  
         
   }
+
+ navBack() {
+  this.route.navigateByUrl("list")
+  return;
+ }
 
 }

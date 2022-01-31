@@ -54,7 +54,7 @@ export class VehicleService {
     
   }
 
-  public deleteVehicle(id?: number | null | undefined) {
+  public deleteVehicle(id?: number | null) {
 
     return this.httpClient
     .delete(`https://localhost:44327/Car/${id}`)
