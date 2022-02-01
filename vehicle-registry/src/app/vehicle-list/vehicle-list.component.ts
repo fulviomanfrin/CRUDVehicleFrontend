@@ -11,7 +11,7 @@ import { VehicleService} from '../service/vehicle.service';
 export class VehicleListComponent implements OnInit {
 
   vehicles: Vehicle[] = [];
-  //vehicle = new Vehicle;
+  vehicle= new Vehicle;
   
   constructor(private _service: VehicleService, private router: Router) { }
 
@@ -44,24 +44,14 @@ export class VehicleListComponent implements OnInit {
       })
   }
 
-  getTransmission(transmissionType: ETransmission) {
-    const TransmissionType: { [key in ETransmission]: string } = {
-      [ETransmission.amt]: "AMT",
-      [ETransmission.auto]: "AUTO",
-      [ETransmission.manual]: "MANUAL",
-    }
-    
-    return TransmissionType[transmissionType]
+  showTransmission(transmissionType: ETransmission) {
+  
+    return this.vehicle.getTransmission(transmissionType)
   }
 
-  getFuel(fuelType: EFuel) {
-    const FuelType: { [key in EFuel]: string } = {
-      [EFuel.Flex]: "FLEX",
-      [EFuel.Gasoline]: "GASOLINE",
-      [EFuel.Etanol]: "ETANOL",
-    }
-    
-    return FuelType[fuelType]
+  showFuelType(fuelType: EFuel) {
+  
+    return this.vehicle.getFuel(fuelType)
   }
 
 }

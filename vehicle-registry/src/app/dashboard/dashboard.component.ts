@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { VehicleService} from '../service/vehicle.service'
 import { AppRoutingModule } from '../app-routing.module';
+import { ETransmission, Vehicle, EFuel } from '../models/vehicle'
 
 @Component({
   selector: 'app-dashboard',
@@ -10,6 +11,7 @@ import { AppRoutingModule } from '../app-routing.module';
 export class DashboardComponent implements OnInit {
 
   vehicles: any[] = [];
+  vehicle= new Vehicle;
 
   constructor(private _service: VehicleService) { }
 
@@ -22,4 +24,14 @@ export class DashboardComponent implements OnInit {
     });
   }
 
+
+  showTransmission(transmissionType: ETransmission) {
+  
+    return this.vehicle.getTransmission(transmissionType)
+  }
+
+  showFuelType(fuelType: EFuel) {
+  
+    return this.vehicle.getFuel(fuelType)
+  }
 }

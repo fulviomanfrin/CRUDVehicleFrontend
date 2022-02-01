@@ -21,9 +21,9 @@
               <td>{{ vehicle.model }}</td>
               <td>{{ vehicle.makeId }}</td>
               <td>{{ vehicle.doorQty }}</td>
-              <td>{{ getTransmission(vehicle.transmissionType) }}</td>
+              <td>{{ showTransmission(vehicle.transmissionType) }}</td>
               <td>{{ vehicle.year }}</td>
-              <td>{{ getFuel(vehicle.fuelType) }}</td>
+              <td>{{ showFuelType(vehicle.fuelType) }}</td>
               <td><button type="button" class="btn btn-primary" (click)="navigateWithId(vehicle.id)">Update</button></td>
               <td><button type="button" class="btn btn-danger" (click)="deleteId(vehicle.id)">Delete</button></td>
               

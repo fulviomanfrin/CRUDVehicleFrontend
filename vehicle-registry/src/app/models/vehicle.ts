@@ -1,15 +1,8 @@
 export class Vehicle{
 
-    constructor(
-
-        
-
-
-    )
+    constructor( )
     {
      
-        
-
     }
 
     model: string = "";
@@ -20,6 +13,25 @@ export class Vehicle{
     public fuelType: EFuel = 0;
     public id?: number | null
 
+    getFuel(fuelType: EFuel) {
+        const FuelType: { [key in EFuel]: string } = {
+          [EFuel.Flex]: "FLEX",
+          [EFuel.Gasoline]: "GASOLINE",
+          [EFuel.Etanol]: "ETANOL",
+        }
+        
+        return FuelType[fuelType]
+      }
+
+    getTransmission(transmissionType: ETransmission) {
+    const TransmissionType: { [key in ETransmission]: string } = {
+        [ETransmission.amt]: "AMT",
+        [ETransmission.auto]: "AUTO",
+        [ETransmission.manual]: "MANUAL",
+    }
+    
+    return TransmissionType[transmissionType]
+    }
 }
 
 export enum ETransmission {
@@ -27,7 +39,6 @@ export enum ETransmission {
     amt = 1,
     auto = 2
 
-    
 }
 
 export enum EFuel{
