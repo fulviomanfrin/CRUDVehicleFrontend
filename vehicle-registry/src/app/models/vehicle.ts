@@ -8,7 +8,7 @@ export class Vehicle{
     )
     {
      
-
+        
 
     }
 
@@ -22,14 +22,20 @@ export class Vehicle{
 
 }
 
-enum ETransmission {
+export enum ETransmission {
     manual = 0,
     amt = 1,
     auto = 2
+
+    
 }
 
-enum EFuel{
+export enum EFuel{
     Flex = 0,
     Gasoline =1,
     Etanol = 2
 }
+
+
+
+    

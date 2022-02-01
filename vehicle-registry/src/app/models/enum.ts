@@ -1,17 +1,17 @@
-import { Vehicle } from "./vehicle";
-export class Transmission{
+// import { Vehicle } from "./vehicle";
+// export class Transmission{
 
     
-    constructor(vehicle: Vehicle) {
+//     constructor(vehicle: Vehicle) {
         
-        enum transmission {
-            manual = 0,
-            amt = 1,
-            auto = 2
-            }
+//         enum transmission {
+//             manual = 0,
+//             amt = 1,
+//             auto = 2
+//             }
         
-    }
+//     }
 
     
-}
+// }
 

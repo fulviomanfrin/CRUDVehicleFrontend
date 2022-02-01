@@ -1,6 +1,6 @@
 import { Component, OnInit,TemplateRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { Vehicle } from '../models/vehicle';
+import { ETransmission, Vehicle, EFuel } from '../models/vehicle';
 import { VehicleService} from '../service/vehicle.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { VehicleService} from '../service/vehicle.service';
 export class VehicleListComponent implements OnInit {
 
   vehicles: Vehicle[] = [];
-  vehicle = new Vehicle;
+  //vehicle = new Vehicle;
   
   constructor(private _service: VehicleService, private router: Router) { }
 
@@ -37,11 +37,31 @@ export class VehicleListComponent implements OnInit {
       .subscribe((response) => {
           console.log(response)
           this._service.getVehicles()
-    .subscribe((response) => {
-      this.vehicles = response
-      console.log(response)
-    })
+            .subscribe((response) => {
+              this.vehicles = response
+              console.log(response)
+            })
       })
+  }
+
+  getTransmission(transmissionType: ETransmission) {
+    const TransmissionType: { [key in ETransmission]: string } = {
+      [ETransmission.amt]: "AMT",
+      [ETransmission.auto]: "AUTO",
+      [ETransmission.manual]: "MANUAL",
+    }
+    
+    return TransmissionType[transmissionType]
+  }
+
+  getFuel(fuelType: EFuel) {
+    const FuelType: { [key in EFuel]: string } = {
+      [EFuel.Flex]: "FLEX",
+      [EFuel.Gasoline]: "GASOLINE",
+      [EFuel.Etanol]: "ETANOL",
+    }
+    
+    return FuelType[fuelType]
   }
 
 }
