@@ -7,6 +7,7 @@ export class Vehicle{
 
     model: string = "";
     public makeId: number = 0;
+    public makeName: string = "";
     public doorQty: number = 0;
     public transmissionType: ETransmission = 0;
     public year: number = 0;

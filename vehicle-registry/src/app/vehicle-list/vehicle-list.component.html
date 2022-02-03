@@ -19,7 +19,8 @@
             <tr *ngFor="let vehicle of vehicles">
               <th scope="row">{{ vehicle.id }}</th>
               <td>{{ vehicle.model }}</td>
-              <td>{{ vehicle.makeId }}</td>
+              <!-- <td>{{ vehicle.makeId }}</td> -->
+              <td>{{ vehicle.makeName }}</td>
               <td>{{ vehicle.doorQty }}</td>
               <td>{{ showTransmission(vehicle.transmissionType) }}</td>
               <td>{{ vehicle.year }}</td>
